@@ -8,6 +8,7 @@ use DB;
 use Session;
 use App\MyModel;
 use Validator;
+
 class MyController extends Controller
 {
     public function index()
@@ -18,11 +19,15 @@ class MyController extends Controller
     {
             $dat = new MyModel;
             $dat->fname = $request->input('fname');
-            $dat->save();
             $validator = Validator::make($request->all(), [
-                'fname' => 'required|unique:fname|max:255',
-                'fname' => 'required',
+             'firstname' => 'required|string',
+             'middlename' => 'required|string',
+             'lastname' => 'required|string',
+             'username' => 'required|email',
+             'password' => 'required|min:8|alpha_dash'
             ]);
+
+
 
             if ($validator->fails()) {
                return redirect('/')

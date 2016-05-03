@@ -36,37 +36,37 @@
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">First Name</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control"  name="fname" value="">
+                                                <input type="text" class="form-control"  name="firstname" value="{{ old('firstname')}}">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">Middle Name</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="" value="">
+                                                <input type="text" class="form-control" name="middlename" value="{{ old('middlename')}}">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">Last Name</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="" value="">
+                                                <input type="text" class="form-control" name="lastname" value="{{ old('lastname') }}">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">Username</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="" value="">
+                                                <input type="text" class="form-control" name="username" value="{{ old('username')}}">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">Password</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="" value="">
+                                                <input type="text" class="form-control" name="password" value="">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">Confiirm Password</label>
                                             <div class="col-sm-9">
-                                                <input type="text" class="form-control" name="" value="">
+                                                <input type="text" class="form-control" name="cpassword" value="">
                                             </div>
                                         </div>
                                         <div class="pull-right">
