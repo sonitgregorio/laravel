@@ -30,7 +30,6 @@
                                         </div>
                                     @endif
 
-
                                     <form class="form-horizontal" action="/insert_data" method="post">
                                         {!! csrf_field() !!}
                                         <div class="form-group">

@@ -35,6 +35,8 @@ class MyController extends Controller
                            ->withInput();
            }
 
+           
+
             Session::flash('success', 'Here is your success message');
             return redirect('/');
     }
