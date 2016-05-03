@@ -73,12 +73,45 @@
                                             <button type="submit" class="btn btn-primary" name="button">Save</button>
                                         </div>
                                     </form>
+                                   
+                                    <div class="table table-responsive">
+                                     <br />  
+                                        <table class="table table-bordered table-striped">
+                                            <thead>
+                                                <tr class="navbar-inverse" style="color:white;text-align:center">
+                                                    <td>First Name</td>
+                                                    <td>Middle Name</td>
+                                                    <td>Last Name</td>
+                                                    <td>Username</td>
+                                                    <td>Password</td>
+                                                    <td>Action</td>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            @foreach ($data as $key)
+                                                <tr>
+                                                    <td>{{ $key->fname }}</td>   
+                                                    <td>{{ $key->lname }}</td>
+                                                    <td>{{ $key->mname }}</td>
+                                                    <td>{{ $key->username }}</td>
+                                                    <td>{{ $key->password }}</td>
+                                                    <td style="text-align: center">
+                                                        <a href="" class="btn btn-primary btn-xs">Edit&nbsp;<span class="glyphicon glyphicon-pencil"></span></a>
+                                                        <a href="" class="btn btn-danger btn-xs">Delete&nbsp;<span class="glyphicon glyphicon-trash"></span></a>
+                                                    </td>
+                                                </tr>
+                                            @endforeach
+                                                
+                                            </tbody>
+                                        </table>
+                                    </div>
                                 </div>
                             </div>
+
                             <div class="panel-footer">
                                 <center>
                                 <p>
-                                    All Right Reserved 2016
+                                    All Right Reserved &copy;2016
                                 </p>
                             </center>
                             </div>

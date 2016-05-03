@@ -13,7 +13,8 @@ class MyController extends Controller
 {
     public function index()
     {
-        return view('welcome');
+        $users = DB::table('tbl_users')->get();
+        return view('welcome', ['data' => $users]);
     }
     public function insert_data(Request $request)
     {
@@ -27,15 +28,10 @@ class MyController extends Controller
              'password' => 'required|min:8|alpha_dash'
             ]);
 
-
-
             if ($validator->fails()) {
-               return redirect('/')
-                           ->withErrors($validator)
-                           ->withInput();
-           }
+               return redirect('/')->withErrors($validator)->withInput();
+            }
 
-           
 
             Session::flash('success', 'Here is your success message');
             return redirect('/');

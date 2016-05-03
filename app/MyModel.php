@@ -8,12 +8,4 @@
     {
         protected $table = 'tbl_users';
         protected $fillable = ['fname', 'mname', 'lname', 'username', 'password'];
-
-        public function save_mod()
-        {
-        	
-        }
-
-
-
     }
