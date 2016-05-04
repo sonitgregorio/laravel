@@ -73,9 +73,9 @@
                                             <button type="submit" class="btn btn-primary" name="button">Save</button>
                                         </div>
                                     </form>
-                                   
+
                                     <div class="table table-responsive">
-                                     <br />  
+                                     <br />
                                         <table class="table table-bordered table-striped">
                                             <thead>
                                                 <tr class="navbar-inverse" style="color:white;text-align:center">
@@ -90,18 +90,25 @@
                                             <tbody>
                                             @foreach ($data as $key)
                                                 <tr>
-                                                    <td>{{ $key->fname }}</td>   
+                                                    <td>{{ $key->fname }}</td>
                                                     <td>{{ $key->lname }}</td>
                                                     <td>{{ $key->mname }}</td>
                                                     <td>{{ $key->username }}</td>
                                                     <td>{{ $key->password }}</td>
+                                                    <td>
+                                                        @if(Hash::check('sonitgregorio07', $key->password))
+                                                            <h5>True</h5>
+                                                        @else
+                                                            <h5>False</h5>
+                                                        @endif
+                                                    </td>
                                                     <td style="text-align: center">
                                                         <a href="/update/{{ $key->id }}" class="btn btn-primary btn-xs">Edit&nbsp;<span class="glyphicon glyphicon-pencil"></span></a>
                                                         <a href="/delete/{{ $key->id }}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?')">Delete&nbsp;<span class="glyphicon glyphicon-trash"></span></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
-                                                
+
                                             </tbody>
                                         </table>
                                     </div>

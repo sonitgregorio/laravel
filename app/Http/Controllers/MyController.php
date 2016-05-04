@@ -4,10 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
-use App\MyModel;
+use App\MyModel as mod;
 use Session;
 use Validator;
-
+use Hash;
 class MyController extends Controller
 {
     public function index()
@@ -35,17 +35,17 @@ class MyController extends Controller
                 $dat->lname = $request->input('middlename');
                 $dat->mname = $request->input('lastname');
                 $dat->username = $request->input('username');
-                $dat->password = $request->input('password');
+                $dat->password =  Hash::make($request->input('password'));
                 $dat->save();
                 Session::flash('success', 'Here is your success message');
                 return redirect('/');
             }
-
-
-
-
-
-
-
+    }
+    public function delete($ids)
+    {
+            $x = mod::find($ids);
+            $x->delete();
+            Session::flash('success', 'Deleted');
+            return redirect('/');
     }
 }

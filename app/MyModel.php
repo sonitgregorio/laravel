@@ -10,7 +10,7 @@
         protected $fillable = ['fname', 'mname', 'lname', 'username', 'password'];
         public function getdata()
         {
-            return MyModel::where('id', 1)->get();
+            return MyModel::All();
         }
 
     }
