@@ -96,8 +96,8 @@
                                                     <td>{{ $key->username }}</td>
                                                     <td>{{ $key->password }}</td>
                                                     <td style="text-align: center">
-                                                        <a href="" class="btn btn-primary btn-xs">Edit&nbsp;<span class="glyphicon glyphicon-pencil"></span></a>
-                                                        <a href="" class="btn btn-danger btn-xs">Delete&nbsp;<span class="glyphicon glyphicon-trash"></span></a>
+                                                        <a href="/update/{{ $key->id }}" class="btn btn-primary btn-xs">Edit&nbsp;<span class="glyphicon glyphicon-pencil"></span></a>
+                                                        <a href="/delete/{{ $key->id }}" class="btn btn-danger btn-xs" onclick="return confirm('Are you sure?')">Delete&nbsp;<span class="glyphicon glyphicon-trash"></span></a>
                                                     </td>
                                                 </tr>
                                             @endforeach
