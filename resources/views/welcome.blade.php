@@ -8,6 +8,7 @@
                         <div class="panel-heading">
                             <div class="panel-title">
                                 <h1>Laravel 5.2</h1>
+
                             </div>
                         </div>
                             <div class="panel-body">
@@ -19,9 +20,7 @@
                                             </div>
                                         </div>
                                     @endif
-
                                     @if (count($errors) > 0)
-                                    <?php print_r($x) ?>
                                         <div class="alert alert-danger">
                                             <ul>
                                                 @foreach ($errors->all() as $error)
@@ -87,6 +86,7 @@
                                                     <td>Last Name</td>
                                                     <td>Username</td>
                                                     <td>Password</td>
+                                                    <td>Bolean</td>
                                                     <td>Action</td>
                                                 </tr>
                                             </thead>
@@ -99,7 +99,7 @@
                                                     <td>{{ $key->username }}</td>
                                                     <td>{{ $key->password }}</td>
                                                     <td>
-                                                        @if(Hash::check('sonitgregorio07', $key->password))
+                                                        @if(Hash::check('sheryl06', $key->password))
                                                             <h5>True</h5>
                                                         @else
                                                             <h5>False</h5>
@@ -155,19 +155,8 @@
     @section('footer')
         <script>
             $(document).ready(function(){
-                $(function () {
-                    $.ajaxSetup({
-                        headers: { 'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content') }
-                    });
-                });
-                $('.edit_inf').click(function(){
-                    id = $(this).data('param');
-
-                    $.post('update', {id}, function(data){
-                        alert(data);
-                    });
-
-                })
+                var mydate = new Date('2014-04-03');
+                alert(mydate.toDateString())
             })
         </script>
     @stop
