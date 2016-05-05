@@ -12,5 +12,12 @@
         {
             return MyModel::All();
         }
+        public function get_spec($ids)
+        {
+            return $xs = [ 'fname' => '',
+             'mname' => '',
+             'lname' => '',
+             'id' => ''];
+        }
 
     }

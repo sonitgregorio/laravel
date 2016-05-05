@@ -24,3 +24,5 @@ Route::get('/', 'MyController@index');
 Route::resource('insert_data', 'MyController@insert_data');
 
 Route::get('/delete/{ids}', 'MyController@delete');
+
+Route::post('/update', 'MyController@update');
